@@ -4,15 +4,265 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Expanded View</title>
+  <title>Initial View</title>
   <meta name="description" content="">
   <meta name="author" content="Camden Miller">
 
-  <link rel="stylesheet" href="styles.css">
+  <link href="dist/star-rating.css" rel="stylesheet" />
+  <script src="dist/star-rating.min.js"></script>
+  <script src="https://kit.fontawesome.com/9c57a0bf6e.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Gruppo&family=Julius+Sans+One&family=Major+Mono+Display&family=Megrim&family=Montserrat+Subrayada:wght@400;700&family=Nixie+One&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light+Two&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
 
 </head>
 
 <body>
-  <script src="js/index.js"></script>
+  <header>
+    <h1>BOOKMARKS</h1>
+  </header>
+
+  <main>
+    <section class='flex flex-row' id='top-buttons'>
+      <form id='new-bookmark-submit'>
+        <button type="submit" class='new-bookmark-button'>New <i class="far fa-bookmark"></i></button>
+      </form>
+      <form id='rating-selector-form'>
+        <label for="min-rating-selector" class='hidden'>Minimum Rating</label>
+        <select class="min-rating-selector" name="min-rating-selector">
+          <option value="0">Minimum Rating</option>
+          <option value="1">1 Star</option>
+          <option value="2">2 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="5">5 Stars</option>
+      </select>
+      </form>
+    </section>
+
+    <section>
+      <ul>
+        <li class='flex flex-column expanded'>
+          <div class='flex flex-row space-between expanded-header title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+
+        <li class='flex flex-column'>
+          <div class='flex flex-row space-between title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column hidden'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+
+        <li class='flex flex-column'>
+          <div class='flex flex-row space-between title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column hidden'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+
+        <li class='flex flex-column'>
+          <div class='flex flex-row space-between title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column hidden'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+
+        <li class='flex flex-column'>
+          <div class='flex flex-row space-between title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column hidden'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+
+        <li class='flex flex-column'>
+          <div class='flex flex-row space-between title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column hidden'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+
+        <li class='flex flex-column'>
+          <div class='flex flex-row space-between title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column hidden'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+
+        <li class='flex flex-column'>
+          <div class='flex flex-row space-between title'>
+            <div class="bookmark-label">Sample Bookmark</div>
+            <span class="star-rating">
+              <div class='rating'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='far fa-star'></i>
+                <i class='far fa-star'></i>
+              </div>
+            </span>
+          </div>
+
+          <div class='flex flex-column hidden'>
+            <div class='flex flex-row'>
+              <div class='visit-site-wrapper'>
+                <button class="visit-site" type="button">Visit Site</button>
+              </div>
+              <div class='trash-wrapper'>
+                <button type="button" class='far fa-trash-alt'></button>
+              </div>
+            </div>
+            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </li>
+        
+        
+    </section>
+  </main>
+  
+  <footer></footer>
+  
+  <script src="../js/index.js"></script>
 </body>
 </html>

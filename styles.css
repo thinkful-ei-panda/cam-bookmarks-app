@@ -1,0 +1,173 @@
+/* 
+font-family: 'Chathura', sans-serif;
+font-family: 'Gruppo', cursive;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Major Mono Display', monospace;
+font-family: 'Megrim', cursive;
+font-family: 'Montserrat Subrayada', sans-serif;
+font-family: 'Nixie One', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Syncopate', sans-serif;
+*/
+
+h1 {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 8vw;
+}
+
+.flex {
+  display: flex
+}
+
+.flex-row {
+  flex-direction: row
+}
+
+.flex-column {
+  flex-direction: column
+}
+
+.hidden {
+  display: none
+}
+
+p {
+  margin: none
+}
+
+ul {
+  overflow-y: scroll;
+  height: 70vh;
+  border: solid;
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+  text-align: center;
+}
+
+li{
+  border: solid;
+  border-width: 1px;
+  font-family: 'Chathura', sans-serif;
+  font-size: 40px;
+  margin: none;
+  font-weight: bold;
+}
+
+.fas.fa-star {
+  color: orange;
+}
+
+.fa-star {
+  font-size: 20px;
+}
+
+body {
+  height: 96vh;
+  width: 100%;
+  text-align: center;
+}
+
+section {
+  text-align: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: auto
+}
+
+#new-bookmark-submit {
+  margin: auto 0;
+}
+
+.new-bookmark-button {
+  /* background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; */
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 4vh;
+  height: 100%;
+  width: 100%;
+}
+
+#top-buttons {
+  justify-content: space-evenly;
+  height: 7vh;
+  padding-bottom: 3vh;
+}
+
+#top-buttons label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 5vh;
+}
+
+#rating-selector-form {
+  margin: auto 0
+}
+
+select {
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  height: 100%;
+  width: 100%;
+  font-size: 3vh;
+}
+
+#top-buttons form {
+  height: 90%;
+  width: 45%
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.expanded-header {
+  background-color: lightgray;
+}
+
+.title {
+  padding: 0 50px;
+  border-bottom-style: solid;
+}
+
+.description {
+  padding: 2vh;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2vh;
+  font-weight: lighter;
+  text-align: justify;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 2%;
+  padding-bottom: 2%
+}
+
+.fa-trash-alt {
+  border-style: none;
+  background: none;
+  font-size: 3vh;
+  margin: auto;
+  margin-top: 9%;
+  margin-left: 40%
+}
+
+.visit-site {
+  height: 80%;
+  width: 80%
+}
+
+.visit-site-wrapper {
+  width: 60%;
+  padding-left: 20%;
+  padding-top: 1%
+}
+
+.trash-wrapper {
+  width: 50%
+}
