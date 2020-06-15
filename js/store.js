@@ -2,15 +2,16 @@ const STORE = {
   bookmarks: [],
   adding: false,
   error: null,
-  filter: 0
+  filter: 0,
+  minRating: 0
 };
 
 function findById(id) {
-  return this.STORE.find(currentItem => currentItem.id === id);
+  return this.STORE.bookmarks.find(currentItem => currentItem.id === id);
 }
 
 function addItem(item) {
-  this.STORE.push(item);
+  this.STORE.bookmarks.push(item);
 }
 
 function findAndUpdate(id,newData) {
@@ -19,7 +20,11 @@ function findAndUpdate(id,newData) {
 }
 
 function findAndDelete(id) {
-  this.STORE = this.STORE.filter(currentItem => currentItem.id !== id);
+  this.STORE.bookmarks = this.STORE.bookmarks.filter(currentItem => currentItem.id !== id);
+}
+
+function changeFilter(newMin) {
+  this.STORE.minRating = newMin;
 }
 
 export default {
@@ -27,5 +32,6 @@ export default {
   findById,
   addItem,
   findAndDelete,
-  findAndUpdate
+  findAndUpdate,
+  changeFilter
 };

@@ -1,6 +1,6 @@
-import api from './api';
-import store from './store';
-import bookmarks from './shopping-list';
+import api from './api.js';
+import store from './store.js';
+import bookmarks from './bookmarks.js';
 
 const main = function () {
   // api.createItem('pears')
@@ -12,10 +12,11 @@ const main = function () {
   //   .then((items) => {
   //     console.log(items);
   //   });
-  
-  api.getItems()
+
+  api.getBookmarks()
     // .then(res => res.json())
     .then((items) => {
+      console.log(items);
       items.forEach((item) => store.addItem(item));
       bookmarks.render();
       // const item = store.items[0];

@@ -4,6 +4,7 @@ function listApiFetch(...args) {
   let error;
   return fetch(...args)
     .then(res => {
+      console.log(res);
       if (!res.ok) {
         // Valid HTTP response but non-2xx status - let's create an error!
         error = { code: res.status };
@@ -35,17 +36,24 @@ function getBookmarks() {
  * @param {string} desc 
  * @param {number} rating 
  */
-function createBookmark(title, url, desc = 'Add a description (optional)', rating) {
-  let newBookmark = JSON.stringify({
+function createBookmark(title, url, desc = '', rating) {
+  let newBookmark = {
     title: title,
     url: url,
     desc: desc,
     rating: rating
+  };
+  console.log(newBookmark);
+  console.log(typeof title);
+  console.log(`${BASE_URL}/bookmarks`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newBookmark)
   });
   return listApiFetch(`${BASE_URL}/bookmarks`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: newBookmark
+    body: JSON.stringify(newBookmark)
   });
 }
 
@@ -57,7 +65,7 @@ function createBookmark(title, url, desc = 'Add a description (optional)', ratin
  * @param {string} desc 
  * @param {number} rating 
  */
-function updateBookmark(id, title, url, desc = 'Add a description (optional)', rating) {
+function updateBookmark(id, title, url, desc = '', rating) {
   let updateBookmark = JSON.stringify({
     id: id,
     title: title,

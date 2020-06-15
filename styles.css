@@ -136,7 +136,7 @@ select {
 }
 
 .title {
-  padding: 0 50px;
+  padding: 0 0 0 50px;
   border-bottom-style: solid;
 }
 
@@ -230,3 +230,13 @@ fieldset {
   height: 2vh;
 }
 
+.error {
+  color: red
+}
+
+.fa-plus, .fa-minus {
+  border: none;
+  background: none;
+  margin-left: 2vw;
+  font-size: 3vh
+}
