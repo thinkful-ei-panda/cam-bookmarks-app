@@ -11,6 +11,10 @@ font-family: 'Shadows Into Light Two', cursive;
 font-family: 'Syncopate', sans-serif;
 */
 
+body {
+  overflow-y: scroll
+}
+
 h1 {
   font-family: 'Major Mono Display', monospace;
   font-size: 8vw;
@@ -39,7 +43,7 @@ p {
 ul {
   overflow-y: scroll;
   height: 70vh;
-  border: solid;
+  /* border: solid; */
   list-style-type: none;
   padding: 0;
   margin: auto;
@@ -47,7 +51,7 @@ ul {
 }
 
 li{
-  border: solid;
+  border-bottom-style: solid;
   border-width: 1px;
   font-family: 'Chathura', sans-serif;
   font-size: 40px;
@@ -64,8 +68,6 @@ li{
 }
 
 body {
-  height: 96vh;
-  width: 100%;
   text-align: center;
 }
 
@@ -73,10 +75,11 @@ section {
   text-align: center;
   justify-content: center;
   max-width: 600px;
-  margin: auto
+  margin: auto;
+  border-style: solid;
 }
 
-#new-bookmark-submit {
+#new-bookmark-button {
   margin: auto 0;
 }
 
@@ -99,6 +102,7 @@ section {
   justify-content: space-evenly;
   height: 7vh;
   padding-bottom: 3vh;
+  border-style: none;
 }
 
 #top-buttons label {
@@ -171,3 +175,58 @@ select {
 .trash-wrapper {
   width: 50%
 }
+
+.new-bookmark-section {
+  margin-bottom: 5vh;
+  padding: 2% 0 2% 0;
+}
+
+fieldset {
+  border-style: none;
+}
+
+.new-url, .new-name {
+  width: 80%;
+  height: 2vh;
+  border-radius: 0;
+  margin-bottom: 1%
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+#new-description {
+  width: 80%;
+  height: 7vh;
+  margin: 5% auto;
+}
+
+.description-box {
+  border-style: solid;
+  width: 81%;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: auto;
+  border-width: 1px;
+}
+
+.new-rating {
+  font-size: 1vh;
+}
+
+.margin-auto {
+  margin: auto 0;
+}
+
+.label-rating {
+  width: auto;
+  margin: 1% 10% 1% 10%;
+  height: 2vh;
+}
+
