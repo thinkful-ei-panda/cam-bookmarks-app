@@ -20,6 +20,10 @@ h1 {
   font-size: 8vw;
 }
 
+.gray-background {
+  background-color: lightgray;
+}
+
 .flex {
   display: flex
 }
