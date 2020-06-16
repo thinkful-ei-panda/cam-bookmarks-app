@@ -19,7 +19,7 @@ function generateItemRating(item) {
 function generateItemElement(item) {
   
   return `<li class='flex flex-column js-item-element' id='${item.id}' data-item-id="${item.id}">
-            <div class='flex flex-row space-between title'>
+            <div class='flex flex-row space-between title' id='${item.id}-title'>
               <div class="bookmark-label">${item.title}</div>
               <div class='flex flex-row rating-etc'>
                 <span class="star-rating">
@@ -136,6 +136,7 @@ function handleBookmarkExpand() {
     $(`#${id}-description`).removeClass('hidden');
     $(`#${id}-button`).removeClass('fa-plus');
     $(`#${id}-button`).addClass('fa-minus');
+    $(`#${id}-title`).addClass('gray-background');
     // $(event.target)
     //   .removeClass('.fa-plus')
     //   .addClass('.fa-minus');
@@ -151,6 +152,7 @@ function handleBookmarkCollapse() {
     $(`#${id}-description`).addClass('hidden');
     $(`#${id}-button`).removeClass('fa-minus');
     $(`#${id}-button`).addClass('fa-plus');
+    $(`#${id}-title`).removeClass('gray-background');
     // $(event.target)
     //   .removeClass('.fa-minus')
     //   .addClass('.fa-plus');
