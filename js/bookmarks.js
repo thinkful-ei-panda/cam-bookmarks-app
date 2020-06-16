@@ -64,38 +64,29 @@ function generateBookmarksString(bookmarks) {
 }
 
 function render() {
-  console.log('bookmarks.render called!');
-  console.log(store.STORE.bookmarks);
   // Filter item list by STORE minRating value
   let bookmarks = [...store.STORE.bookmarks];
-  console.log(bookmarks);
   if (store.STORE.minRating) {
     bookmarks = bookmarks.filter(item => item.rating >= store.STORE.minRating);
-    console.log(store.STORE);
   }
   // render the shopping list in the DOM
   const bookmarksString = generateBookmarksString(bookmarks);
 
   // insert that HTML into the DOM
   $('.js-bookmark-list').html(bookmarksString);
-  console.log('bookmarks.render ran!');
 }
 
 function handleNewBookmarkButton() {
-  console.log('bookmarks.handleNewBookmarkButton called!');
   $('#new-bookmark-button').submit(event => {
     event.preventDefault();
-    console.log('New bookmark clicked!');
     $('#new-bookmark-section').removeClass('hidden');
     render();
   });
-  console.log('bookmarks.handleNewBookmarkButton ran!');
 }
 
 function handleNewItemSubmit() {
   $('#new-bookmark-form').submit(event => {
     event.preventDefault();
-    console.log('Create button clicked!');
     const newItemName = $('.new-name').val(),
       newItemURL = $('.new-url').val(),
       newItemRating = $('.new-rating').val();
@@ -126,36 +117,33 @@ function getItemIdFromElement(item) {
     .data('item-id');
 }
 
+function expandBookmark(id) {
+  $(`#${id}-description`).removeClass('hidden');
+  $(`#${id}-button`).removeClass('fa-plus');
+  $(`#${id}-button`).addClass('fa-minus');
+  $(`#${id}-title`).addClass('gray-background');
+}
+
 function handleBookmarkExpand() {
-  console.log('bookmarks.handleBookmarkClick called!');
   $(`ul`).on('click','.fa-plus', event => {
     event.preventDefault();
-    console.log($(event.target).attr('class'));
-    console.log($(event.target).closest('li').attr('id'));
     let id = $(event.target).closest('li').attr('id');
-    $(`#${id}-description`).removeClass('hidden');
-    $(`#${id}-button`).removeClass('fa-plus');
-    $(`#${id}-button`).addClass('fa-minus');
-    $(`#${id}-title`).addClass('gray-background');
-    // $(event.target)
-    //   .removeClass('.fa-plus')
-    //   .addClass('.fa-minus');
+    expandBookmark(id);
   });
 }
 
+function collapseBookmark(id) {
+  $(`#${id}-description`).addClass('hidden');
+  $(`#${id}-button`).removeClass('fa-minus');
+  $(`#${id}-button`).addClass('fa-plus');
+  $(`#${id}-title`).removeClass('gray-background');  
+}
+
 function handleBookmarkCollapse() {
-  console.log('bookmarks.handleBookmarkClick called!');
   $('ul').on('click','.fa-minus', event => {
     event.preventDefault();
-    console.log($(event.target).attr('class'));
     let id = $(event.target).closest('li').attr('id');
-    $(`#${id}-description`).addClass('hidden');
-    $(`#${id}-button`).removeClass('fa-minus');
-    $(`#${id}-button`).addClass('fa-plus');
-    $(`#${id}-title`).removeClass('gray-background');
-    // $(event.target)
-    //   .removeClass('.fa-minus')
-    //   .addClass('.fa-plus');
+    collapseBookmark(id);
   });
 }
 
@@ -177,57 +165,24 @@ function handleDeleteItemClicked() {
 
 function handleCancelNewBookmark() {
   $('#cancel-button').click(event => {
-    console.log('Cancel button clicked!!')
     event.preventDefault();
     $('#new-bookmark-section').addClass('hidden');
   });
 }
 
-// function handleEditShoppingItemSubmit() {
-//   $('.js-shopping-list').on('submit', '.js-edit-item', event => {
-//     event.preventDefault();
-//     const id = getItemIdFromElement(event.currentTarget),
-//       itemName = $(event.currentTarget).find('.shopping-item').val();
-//     api.updateItem(id,{name: itemName})
-//       .then(() => {
-//         store.findAndUpdate(id,{name: itemName});
-//         render();
-//       })
-//       .catch(err => renderErrorMessage(err.message));
-//   });
-// }
-
-// function handleItemCheckClicked() {
-//   $('.js-shopping-list').on('click', '.js-item-toggle', event => {
-//     const id = getItemIdFromElement(event.currentTarget),
-//       foundItem = store.items.find(item => item.id === id);
-//     api.updateItem(id, {checked: !foundItem.checked})
-//       .then(() => {
-//         store.findAndUpdate(id,{checked: !foundItem.checked});
-//         render();
-//       })
-//       .catch(err => renderErrorMessage(err.message));
-//   });
-// }
-
 function handleFilterChange() {
-  console.log('handleFilterChange called!');
   $('.min-rating-selector').change(event => {
-    console.log('Selector changed!');
     store.changeFilter($(event.target).val());
     render();
   });
-  console.log('handleFilterChange ran!');
 }
 
 function bindEventListeners() {
   handleNewBookmarkButton();
   handleNewItemSubmit();
-  // handleItemCheckClicked();
   handleDeleteItemClicked();
   handleBookmarkExpand();
   handleBookmarkCollapse();
-  // handleEditShoppingItemSubmit();
   handleFilterChange();
   handleCancelNewBookmark();
 }
