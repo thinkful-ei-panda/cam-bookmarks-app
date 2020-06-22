@@ -247,6 +247,7 @@ function handleNewItemSubmit() {
         .catch((err) => (store.DATA.error = err.message));
     } else {
       store.DATA.error = 'Please include URL protocol (http/https)';
+      render();
     }
   });
 }
