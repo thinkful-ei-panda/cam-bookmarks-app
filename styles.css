@@ -12,11 +12,11 @@ font-family: 'Syncopate', sans-serif;
 */
 
 body {
-  overflow-y: scroll
+  overflow-y: scroll;
 }
 
 h1 {
-  font-family: 'Major Mono Display', monospace;
+  font-family: "Major Mono Display", monospace;
   font-size: 8vw;
 }
 
@@ -25,23 +25,23 @@ h1 {
 }
 
 .flex {
-  display: flex
+  display: flex;
 }
 
 .flex-row {
-  flex-direction: row
+  flex-direction: row;
 }
 
 .flex-column {
-  flex-direction: column
+  flex-direction: column;
 }
 
 .hidden {
-  display: none
+  display: none;
 }
 
 p {
-  margin: none
+  margin: none;
 }
 
 ul {
@@ -54,10 +54,10 @@ ul {
   text-align: center;
 }
 
-li{
+li {
   border-bottom-style: solid;
   border-width: 1px;
-  font-family: 'Chathura', sans-serif;
+  font-family: "Chathura", sans-serif;
   font-size: 40px;
   margin: none;
   font-weight: bold;
@@ -88,7 +88,7 @@ section {
 }
 
 .new-bookmark-button {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: normal;
   font-size: 4vh;
   height: 100%;
@@ -103,25 +103,17 @@ section {
 }
 
 #top-buttons label {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 5vh;
 }
 
 #rating-selector-form {
-  margin: auto 0
-}
-
-select {
-  font-family: 'Raleway', sans-serif;
-  font-weight: normal;
-  height: 100%;
-  width: 100%;
-  font-size: 3vh;
+  margin: auto 0;
 }
 
 #top-buttons form {
   height: 90%;
-  width: 45%
+  width: 45%;
 }
 
 .space-between {
@@ -139,14 +131,14 @@ select {
 
 .description {
   padding: 2vh;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 2vh;
   font-weight: lighter;
   text-align: justify;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 2%;
-  padding-bottom: 2%
+  padding-bottom: 2%;
 }
 
 .fa-trash-alt {
@@ -155,22 +147,23 @@ select {
   font-size: 3vh;
   margin: auto;
   margin-top: 9%;
-  margin-left: 40%
+  margin-left: 40%;
 }
 
 .visit-site {
   height: 80%;
-  width: 80%
+  width: 80%;
+  padding: auto;
 }
 
 .visit-site-wrapper {
   width: 60%;
   padding-left: 20%;
-  padding-top: 1%
+  padding-top: 1%;
 }
 
 .trash-wrapper {
-  width: 50%
+  width: 50%;
 }
 
 .new-bookmark-section {
@@ -182,11 +175,12 @@ fieldset {
   border-style: none;
 }
 
-.new-url, .new-name {
+.new-url,
+.new-name {
   width: 80%;
   height: 2vh;
   border-radius: 0;
-  margin-bottom: 1%
+  margin-bottom: 1%;
 }
 
 .left-align {
@@ -213,10 +207,6 @@ fieldset {
   border-width: 1px;
 }
 
-.new-rating {
-  font-size: 1vh;
-}
-
 .margin-auto {
   margin: auto 0;
 }
@@ -224,16 +214,39 @@ fieldset {
 .label-rating {
   width: auto;
   margin: 1% 10% 1% 10%;
-  height: 2vh;
+  height: 3vh;
 }
 
 .error {
-  color: red
+  color: red;
 }
 
-.fa-plus, .fa-minus {
+.fa-plus,
+.fa-minus {
   border: none;
   background: none;
   margin-left: 2vw;
-  font-size: 3vh
+  font-size: 3vh;
+}
+
+select {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.new-rating {
+  font-size: 2vh;
+}
+
+.bookmark-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rating {
+  min-width: 150px;
 }

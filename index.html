@@ -1,92 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
 
-  <title>Bookmarks App</title>
-  <meta name="description" content="">
-  <meta name="author" content="Camden Miller">
+    <title>Bookmarks App</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Camden Miller" />
 
-  <script src="https://kit.fontawesome.com/9c57a0bf6e.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Gruppo&family=Julius+Sans+One&family=Major+Mono+Display&family=Megrim&family=Montserrat+Subrayada:wght@400;700&family=Nixie+One&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light+Two&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <script
+      src="https://kit.fontawesome.com/9c57a0bf6e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Gruppo&family=Julius+Sans+One&family=Major+Mono+Display&family=Megrim&family=Montserrat+Subrayada:wght@400;700&family=Nixie+One&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light+Two&family=Syncopate:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-</head>
+  <body>
+    <header>
+      <h1>BOOKMARKS</h1>
+    </header>
 
-<body>
-  <header>
-    <h1>BOOKMARKS</h1>
-  </header>
+    <main></main>
 
-  <main>
-    <p class="error hidden"></p>
-    <section class='flex flex-row' id='top-buttons'>
-      <form id='new-bookmark-button'>
-        <button type="submit" class='new-bookmark-button'>New <i class="far fa-bookmark"></i></button>
-      </form>
-      <form id='rating-selector-form'>
-        <label for="min-rating-selector" class='hidden'>Minimum Rating</label>
-        <select class="min-rating-selector" name="min-rating-selector">
-          <option value="">Minimum Rating</option>
-          <option value="5">★★★★★</option>
-          <option value="4">★★★★</option>
-          <option value="3">★★★</option>
-          <option value="2">★★</option>
-          <option value="1">★</option>
-      </select>
-      </form>
-    </section>
+    <footer></footer>
 
-    <section id="new-bookmark-section" class="hidden">
-      <div class="flex flex-column">
-        <form id="new-bookmark-form">
-          <fieldset>
-            <div class="flex flex-row space-between label-rating">
-              <div>
-                <label for="new-url">Add New Bookmark:</label>
-              </div>
-              <div>
-                <select class="new-rating" name='new-rating' required>
-                  <option value="">Select a rating</option>
-                  <option value="5">★★★★★</option>
-                  <option value="4">★★★★</option>
-                  <option value="3">★★★</option>
-                  <option value="2">★★</option>
-                  <option value="1">★</option>
-                </select>
-              </div>
-            </div>
-            <input type="text" class="new-url" name="new-url" placeholder="www.example.com" required>
-            
-            <input type="text" class="new-name" name="new-name" placeholder="Website Name" required>
-
-            <div class='flex flex-column description-box'>
-              <textarea id="new-description" name="description" placeholder='Add a description (optional)'></textarea>
-            </div>
-  
-            <div>
-              <button type="reset" id="cancel-button">Cancel</button>
-              <button type="submit">Create</button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </section>
-
-    <section>
-      <ul class="bookmark-list js-bookmark-list">
-      </ul>        
-    </section>
-  </main>
-  
-  <footer></footer>
-
-  <script
-          src="https://code.jquery.com/jquery-3.2.1.min.js"
-          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-          crossorigin="anonymous"></script>
-  <script type="module" src="js/index.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>

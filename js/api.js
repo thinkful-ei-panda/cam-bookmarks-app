@@ -3,8 +3,7 @@ const BASE_URL = 'https://thinkful-list-api.herokuapp.com/cam';
 function listApiFetch(...args) {
   let error;
   return fetch(...args)
-    .then(res => {
-      console.log(res);
+    .then((res) => {
       if (!res.ok) {
         // Valid HTTP response but non-2xx status - let's create an error!
         error = { code: res.status };
@@ -13,7 +12,7 @@ function listApiFetch(...args) {
       return res.json();
     })
 
-    .then(data => {
+    .then((data) => {
       // If error was flagged, reject the Promise with the error object
       if (error) {
         error.message = data.message;
@@ -30,40 +29,33 @@ function getBookmarks() {
 }
 
 /**
- * 
- * @param {string} title 
- * @param {string} url 
- * @param {string} desc 
- * @param {number} rating 
+ *
+ * @param {string} title
+ * @param {string} url
+ * @param {string} desc
+ * @param {number} rating
  */
 function createBookmark(title, url, desc = '', rating) {
   let newBookmark = {
     title: title,
     url: url,
     desc: desc,
-    rating: rating
+    rating: rating,
   };
-  console.log(newBookmark);
-  console.log(typeof title);
-  console.log(`${BASE_URL}/bookmarks`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newBookmark)
-  });
   return listApiFetch(`${BASE_URL}/bookmarks`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newBookmark)
+    body: JSON.stringify(newBookmark),
   });
 }
 
 /**
- * 
- * @param {string} id 
- * @param {string} title 
- * @param {string} url 
- * @param {string} desc 
- * @param {number} rating 
+ *
+ * @param {string} id
+ * @param {string} title
+ * @param {string} url
+ * @param {string} desc
+ * @param {number} rating
  */
 function updateBookmark(id, title, url, desc = '', rating) {
   let updateBookmark = JSON.stringify({
@@ -71,22 +63,22 @@ function updateBookmark(id, title, url, desc = '', rating) {
     title: title,
     url: url,
     desc: desc,
-    rating: rating
+    rating: rating,
   });
   return listApiFetch(`${BASE_URL}/bookmarks/${id}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
-    body: updateBookmark
+    body: updateBookmark,
   });
 }
 
 /**
- * 
- * @param {string} id 
+ *
+ * @param {string} id
  */
 function deleteBookmark(id) {
   return listApiFetch(`${BASE_URL}/bookmarks/${id}`, {
-    method: 'DELETE'
+    method: 'DELETE',
   });
 }
 
@@ -94,5 +86,5 @@ export default {
   getBookmarks,
   createBookmark,
   updateBookmark,
-  deleteBookmark
+  deleteBookmark,
 };

@@ -3,13 +3,10 @@ import store from './store.js';
 import bookmarks from './bookmarks.js';
 
 const main = function () {
-
-  api.getBookmarks()
-    .then((items) => {
-      items.forEach((item) => store.addItem(item));
-      bookmarks.render();
-    });
-
+  api.getBookmarks().then((items) => {
+    items.forEach((item) => store.addItem(item));
+    bookmarks.render();
+  });
 
   bookmarks.bindEventListeners();
   bookmarks.render();

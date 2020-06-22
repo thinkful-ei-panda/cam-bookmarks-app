@@ -1,37 +1,41 @@
-const STORE = {
+const DATA = {
   bookmarks: [],
   adding: false,
   error: null,
   filter: 0,
-  minRating: 0
+  minRating: 0,
 };
 
 function findById(id) {
-  return this.STORE.bookmarks.find(currentItem => currentItem.id === id);
+  return this.DATA.bookmarks.find((currentItem) => currentItem.id === id);
 }
 
 function addItem(item) {
-  this.STORE.bookmarks.push(item);
+  const expanded = { expanded: false },
+    newItem = Object.assign(item, expanded);
+  this.DATA.bookmarks.push(newItem);
 }
 
-function findAndUpdate(id,newData) {
+function findAndUpdate(id, newData) {
   let foundItem = this.findById(id);
   Object.assign(foundItem, newData);
 }
 
 function findAndDelete(id) {
-  this.STORE.bookmarks = this.STORE.bookmarks.filter(currentItem => currentItem.id !== id);
+  this.DATA.bookmarks = this.DATA.bookmarks.filter(
+    (currentItem) => currentItem.id !== id
+  );
 }
 
 function changeFilter(newMin) {
-  this.STORE.minRating = newMin;
+  this.DATA.minRating = newMin;
 }
 
 export default {
-  STORE,
+  DATA,
   findById,
   addItem,
   findAndDelete,
   findAndUpdate,
-  changeFilter
+  changeFilter,
 };
