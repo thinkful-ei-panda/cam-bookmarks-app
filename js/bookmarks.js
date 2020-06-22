@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable quotes */
 import store from './store.js';
 import api from './api.js';
@@ -185,7 +186,6 @@ function generateBookmarksString(bookmarks) {
       ? generateExpandedItemElement(item)
       : generateItemElement(item)
   );
-  console.log(items);
   return `<section>
     <ul class="bookmark-list js-bookmark-list">${items.join('')}</section>`;
 }
@@ -193,11 +193,9 @@ function render() {
   // Filter item list by STORE minRating value
   let bookmarks = [...store.DATA.bookmarks],
     html = '';
-  console.table(bookmarks);
   if (store.DATA.minRating) {
     bookmarks = bookmarks.filter((item) => item.rating >= store.DATA.minRating);
   }
-  console.table(bookmarks);
 
   const bookmarksString = generateBookmarksString(bookmarks),
     topButtonsString = generateTopButtons();
@@ -257,10 +255,7 @@ function getItemIdFromElement(item) {
 }
 
 function expandBookmark(id) {
-  console.table(store.DATA.bookmarks);
-  console.table(store.findById(id));
   store.findById(id).expanded = true;
-  console.table(store.findById(id));
 }
 
 function handleBookmarkExpand() {
@@ -273,10 +268,7 @@ function handleBookmarkExpand() {
 }
 
 function collapseBookmark(id) {
-  console.table(store.DATA.bookmarks);
-  console.table(store.findById(id));
   store.findById(id).expanded = false;
-  console.table(store.findById(id));
   render();
 }
 
